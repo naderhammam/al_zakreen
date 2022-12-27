@@ -12,5 +12,14 @@ import 'package:intl/intl.dart';
 
 
 
-
+class TestTimer{
+   static String  convert24To12(DateTime time12) {
+      bool isGreaterThan12 = time12.hour > 12;
+      int hour = isGreaterThan12 ? time12.hour - 12 : time12.hour;
+      int minute = time12.minute;
+      String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
+      String minuteInString = minute.toString().length == 1 ? '0$minute' : '$minute';
+      return '$hourInString:$minuteInString';
+   }
+}
 

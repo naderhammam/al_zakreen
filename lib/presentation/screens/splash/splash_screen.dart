@@ -49,8 +49,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
     locData = await location.getLocation();
     setState(() {
-      UserLocation.latNum = locData.latitude!;
-      UserLocation.longNum = locData.longitude!;
+      UserLocation.latNum = locData.latitude ?? 0;
+      UserLocation.longNum = locData.longitude ?? 0;
     });
   }
 
