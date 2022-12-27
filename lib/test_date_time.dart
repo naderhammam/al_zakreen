@@ -8,7 +8,6 @@ import 'package:intl/intl.dart';
 
 
    HijriCalendar hijriDate = HijriCalendar.now();
-   HijriCalendar hh = HijriCalendar.now();
 
 
 
