@@ -13,13 +13,76 @@ import 'package:intl/intl.dart';
 
 
 class TestTimer{
-   static String  convert24To12(DateTime time12) {
-      bool isGreaterThan12 = time12.hour > 12;
-      int hour = isGreaterThan12 ? time12.hour - 12 : time12.hour;
-      int minute = time12.minute;
+
+   static int calculateHoursNowMinus12  = 12 - int.parse(convert24To12NowTimeHourOnly());
+   // static int calculateHoursNowPlus12  = 12 - int.parse(convert24To12PrayerTimeHourOnly());
+
+   static String  convert24To12(DateTime dateTime) {
+      bool isGreaterThan12 = dateTime.hour > 12;
+      int hour = isGreaterThan12 ? dateTime.hour - 12 : dateTime.hour;
+      int minute = dateTime.minute;
       String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
       String minuteInString = minute.toString().length == 1 ? '0$minute' : '$minute';
       return '$hourInString:$minuteInString';
    }
+
+   static String  convert24To12PrayerTimeHourOnly(int dateTime) {
+      bool isGreaterThan12 = dateTime > 12;
+      int hour = isGreaterThan12 ? dateTime - 12 : dateTime;
+      String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
+      return hourInString;
+   }
+
+   static String  convert24To12PrayerTimeMinuteOnly(DateTime dateTime) {
+      int minute = dateTime.minute;
+      String minuteInString = minute.toString().length == 1 ? '0$minute' : '$minute';
+      return minuteInString;
+   }
+
+   static String  convert24To12NowTimeHourOnly() {
+      bool isGreaterThan12 = DateTime.now().hour > 12;
+      int hour = isGreaterThan12 ? DateTime.now().hour - 12 : DateTime.now().hour;
+      String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
+      return hourInString;
+   }
+
+   static String  convert24To12NowTimeMinuteOnly() {
+      int minute = DateTime.now().minute;
+      String minuteInString = minute.toString().length == 1 ? '0$minute' : '$minute';
+      return minuteInString;
+   }
+
+
+   static String  convert24To12Now() {
+      bool isGreaterThan12 = DateTime.now().hour > 12;
+      int hour = isGreaterThan12 ? DateTime.now().hour - 12 : DateTime.now().hour;
+      int minute = DateTime.now().minute;
+      String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
+      String minuteInString = minute.toString().length == 1 ? '0$minute' : '$minute';
+      return '$hourInString:$minuteInString';
+   }
+
+
+
+   static int  testMinute() {
+      int timeNow =  12 -DateTime.now().hour;
+      // int prayTimeTest = 0 + hourInString;
+
+          return timeNow;
+
+   }
+
+   static String testHour(DateTime time12) {
+      bool isGreaterThan12 = time12.hour > 12;
+      int hour = isGreaterThan12 ? time12.hour - 12 : time12.hour;
+      String hourInString = hour.toString().length == 1 ? '0$hour' : '$hour';
+      return hourInString;
+   }
+
+
+
+
+
 }
+
 

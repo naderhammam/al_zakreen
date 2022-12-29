@@ -1,9 +1,13 @@
 import 'dart:async';
 import 'package:al_zakreen/location_service.dart';
 import 'package:al_zakreen/presentation/resources/assets_manager.dart';
+import 'package:al_zakreen/presentation/screens/home/category.dart';
+import 'package:al_zakreen/presentation/screens/home/category_menu_page.dart';
 import 'package:al_zakreen/presentation/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
+
+import '../home/backdrop.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -13,11 +17,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  Timer? _timer;
-  _startDelay(){
-    _timer = Timer(const Duration(seconds: 5), _goNext);
+
+  Category _currentCategory = Category.all;
+
+  void _onCategoryTap(Category category) {
+    setState(() {
+      _currentCategory = category;
+    });
   }
 
+  Timer? _timer;
+  _startDelay() {
+    _timer = Timer(const Duration(seconds: 5), _goNext);
+  }
 
   @override
   void initState() {
@@ -26,26 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
     _startDelay();
   }
 
-  Future<void> locationService() async{
+  Future<void> locationService() async {
     Location location = Location();
     bool serviceEnabled;
     PermissionStatus permissionLocation;
     LocationData locData;
     serviceEnabled = await location.serviceEnabled();
-    if(!serviceEnabled) {
+    if (!serviceEnabled) {
       serviceEnabled = await location.requestService();
-      if(!serviceEnabled){
+      if (!serviceEnabled) {
         return;
       }
     }
     permissionLocation = await location.hasPermission();
-    if(permissionLocation == PermissionStatus.denied){
+    if (permissionLocation == PermissionStatus.denied) {
       permissionLocation = await location.requestPermission();
-      if(permissionLocation != PermissionStatus.granted){
+      if (permissionLocation != PermissionStatus.granted) {
         return;
       }
     }
-
 
     locData = await location.getLocation();
     setState(() {
@@ -54,18 +65,24 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
-
-  _goNext(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context){
-      return  HomeScreen();
+  _goNext() {
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) {
+      return  Backdrop(
+        currentCategory: _currentCategory,
+        frontLayer: HomeScreen(),
+        backLayer: CategoryMenuPage(currentCategory: _currentCategory, onCategoryTap: _onCategoryTap,),
+        frontTitle: Text('SHRINE'),
+        backTitle: Text('MENU'),
+      );
     }));
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      body:  Center(child: Image.asset(ImageManager.splashLogo)),
+      body: Center(child: Image.asset(ImageManager.splashLogo)),
     );
   }
 

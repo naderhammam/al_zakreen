@@ -57,7 +57,7 @@ class PrayerTimeComponent extends StatelessWidget {
                     ),
                     Text(
                       convert24To12(DateTime.parse(
-                          '1969-07-20 ${state.timings?.fajr ?? '00:00'}:04Z')),                      style: TextStyle(
+                          '0000-00-00 ${state.timings?.fajr ?? '00:00'}:04Z')),                      style: TextStyle(
                           fontFamily: 'Josefin Sans',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
@@ -127,7 +127,7 @@ class PrayerTimeComponent extends StatelessWidget {
                     ),
                     Text(
                         convert24To12(DateTime.parse(
-                            '1969-07-20 ${state.timings?.dhuhr ?? '00:00'}:04Z')),
+                            '0000-00-00 ${state.timings?.dhuhr ?? '00:00'}:04Z')),
                       style: TextStyle(
                           fontFamily: 'Josefin Sans',
                           fontSize: 12.sp,
@@ -199,7 +199,7 @@ class PrayerTimeComponent extends StatelessWidget {
                     ),
                     Text(
                       convert24To12(DateTime.parse(
-                          '1969-07-20 ${state.timings?.maghrib ?? '00:00'}:04Z')),
+                          '0000-00-00 ${state.timings?.maghrib ?? '00:00'}:04Z')),
                       style: TextStyle(
                           fontFamily: 'Josefin Sans',
                           fontSize: 12.sp,
@@ -235,7 +235,7 @@ class PrayerTimeComponent extends StatelessWidget {
                     ),
                     Text(
                       convert24To12(DateTime.parse(
-                          '1969-07-20 ${state.timings?.isha ?? '00:00'}:04Z')),
+                          '0000-00-00 ${state.timings?.isha ?? '00:00'}:04Z')),
                       style: TextStyle(
                           fontFamily: 'Josefin Sans',
                           fontSize: 12.sp,

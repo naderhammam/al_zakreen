@@ -32,5 +32,6 @@ class PrayerTimesBloc extends Bloc<PrayerTimesEvent, PrayerTimesState> {
               timings: r,
               prayerTimesState: RequestState.loaded,
             )));
+
   }
 }
