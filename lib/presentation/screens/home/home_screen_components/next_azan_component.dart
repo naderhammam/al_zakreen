@@ -205,7 +205,6 @@ class NextAzanComponent extends StatelessWidget {
 
 
 
-          // print('issssssssssssssssssssssssssssssssssssssssss:: ${difference.inMinutes}');
 
           return Expanded(
             child: Container(

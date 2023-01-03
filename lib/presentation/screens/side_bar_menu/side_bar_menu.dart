@@ -1,3 +1,4 @@
+import 'package:al_zakreen/presentation/resources/color_manager.dart';
 import 'package:al_zakreen/presentation/screens/about_app/About_app.dart';
 import 'package:al_zakreen/presentation/screens/azkar_screen/azkar_screen.dart';
 import 'package:al_zakreen/presentation/screens/el_nawaya_screen/el_nwaya_screen.dart';
@@ -16,47 +17,62 @@ class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Drawer(
         child: Column(
-          children: <Widget>[
-            buildHeader(context),
+          children: [
             buildMenuItems(context),
           ],
         ),
       );
 
-  Widget buildHeader(BuildContext context) => Container();
-  static Widget buildMenuItems(BuildContext context) => Wrap(
-    runSpacing: 34.h,
-    children:  [
-      ListTile(
-        title: const Text('Prayer Times'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PrayerTimesScreen())),
-      ),
-      const Divider(color: Colors.black,),
-      ListTile(
-        title: const Text('Azkar'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AzkarScreen())),
-      ),
-      ListTile(
-        title: const Text('Name of Allah'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NameOfAllahScreen())),
-      ),
-      ListTile(
-        title: const Text('El sabha'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ElSabhaScreen())),
-      ),
-      ListTile(
-        title: const Text('El Nawaya'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ElNwayaScreen())),
-      ),
-      ListTile(
-        title: const Text('Settings'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsScreen())),
-      ),
-      ListTile(
-        title: const Text('About App'),
-        onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutAppScreen())),
+  static Widget buildMenuItems(BuildContext context) => Container(
+    color: ColorManager.primary,
+    child: ListView(
+      children: [
+        Wrap(
+          children:  [
+            const Divider(
+              color: ColorManager.primaryDark, endIndent: 40,indent: 40),
+            ListTile(
+              textColor: Colors.white,
+              title:  const Center(child: Text('Prayer Times')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PrayerTimesScreen())),
+            ),
+            ListTile(
+              textColor: Colors.white,
+              title:  const Center(child: Text('Azkar')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AzkarScreen())),
+            ),
+            ListTile(
+              textColor: Colors.white,
+              title: const Center(child: Text('Name of Allah')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NameOfAllahScreen())),
+            ),
+            ListTile(
+              textColor: Colors.white,
+              contentPadding: EdgeInsets.symmetric(horizontal: 142.w),
+              title: const Center(child: Text('El sabha')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ElSabhaScreen())),
+            ),
+            ListTile(
+              textColor: Colors.white,
+              title: const Center(child: Text('El Nawaya')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ElNwayaScreen())),
+            ),
+            const Divider(
+              color: ColorManager.primaryDark,indent: 148,endIndent: 148,),
+            ListTile(
+              textColor: Colors.white,
+              title: const Center(child: Text('Settings')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsScreen())),
+            ),
+            ListTile(
+              textColor: Colors.white,
+              title: const Center(child: Text('About App')),
+              onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutAppScreen())),
 
-      ),
-    ],
+            ),
+          ],
+        ),
+      ],
+    ),
   );
 }

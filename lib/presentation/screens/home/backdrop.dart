@@ -50,7 +50,7 @@ class _FrontLayer extends StatelessWidget {
         borderRadius: BorderRadius.only(topLeft: Radius.circular(46.0)),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           // TODO: Add a GestureDetector (104)
           GestureDetector(

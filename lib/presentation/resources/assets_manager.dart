@@ -6,6 +6,7 @@ class ImageManager{
   static const String homeImages1 = '$imagePath/home_images/home_images_1.png';
   static const String homeImages2 = '$imagePath/home_images/home_images_2.png';
   static const String homeImages3 = '$imagePath/home_images/home_images_3.png';
+  static const String prayerTime1 = '$imagePath/home_images/prayer_time_1.png';
 
 }
 

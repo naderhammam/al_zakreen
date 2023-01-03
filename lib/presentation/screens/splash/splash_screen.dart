@@ -72,8 +72,8 @@ class _SplashScreenState extends State<SplashScreen> {
         currentNavigationDrawer: _currentNavigationDrawer ?? NavigationDrawer.buildMenuItems(context),
         frontLayer: const HomeScreen(),
         backLayer: NavigationDrawer.buildMenuItems(context),
-        frontTitle: const Text('SHRINE'),
-        backTitle: const Text('MENU'),
+        frontTitle: const Text('     SHRINE',style: TextStyle(color: Colors.white),),
+        backTitle: const Text('MENU',style: TextStyle(color: Colors.white),),
       );
     }));
   }

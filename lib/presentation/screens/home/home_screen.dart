@@ -92,43 +92,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-        // appBar: AppBar(
-        //   backgroundColor: ColorManager.primary,
-        //   toolbarHeight: 54.h,
-        //   leading: Row(
-        //     children: [
-        //       IconButton(
-        //         icon: SvgPicture.asset(
-        //           IconManager.iconMenu,
-        //           width: 15.w,
-        //           height: 12.h,
-        //         ),
-        //         constraints: const BoxConstraints(
-        //             minWidth: 30, minHeight: double.infinity),
-        //         onPressed: () {},
-        //       ),
-        //       SvgPicture.asset(
-        //         ImageManager.logoBar,
-        //         width: 28.w,
-        //         height: 28.h,
-        //       ),
-        //     ],
-        //   ),
-        //   leadingWidth: 77.w,
-        //   title: Padding(
-        //     padding: EdgeInsets.only(
-        //       top: 6.h,
-        //     ),
-        //     child: Text(
-        //       'W AZAKREEN',
-        //       style: TextStyle(
-        //         fontFamily: 'Josefin Sans',
-        //         fontSize: 20.sp,
-        //       ),
-        //     ),
-        //   ),
-        //   titleSpacing: 7.w,
-        // ),
     );
   }
 }
