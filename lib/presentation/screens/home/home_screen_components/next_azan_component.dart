@@ -4,6 +4,7 @@ import 'package:al_zakreen/test_date_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class NextAzanComponent extends StatelessWidget {
   const NextAzanComponent({Key? key}) : super(key: key);
@@ -15,14 +16,13 @@ class NextAzanComponent extends StatelessWidget {
 
     return BlocBuilder<PrayerTimesBloc, PrayerTimesState>(
         builder: (context, state) {
-
           String nextAzanNameCompere (){
-            DateTime fajr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.fajr??'00'}:00");
-            DateTime sunrise = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.sunrise??'00'}:00");
-            DateTime duhr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.dhuhr??'00'}:00");
-            DateTime asr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.asr??'00'}:00");
-            DateTime maghrib = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.maghrib??'00'}:00");
-            DateTime isha = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.isha??'00'}:00");
+            DateTime fajr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.fajr??'00'}:00");
+            DateTime sunrise = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.sunrise??'00'}:00");
+            DateTime duhr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.dhuhr??'00'}:00");
+            DateTime asr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.asr??'00'}:00");
+            DateTime maghrib = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.maghrib??'00'}:00");
+            DateTime isha = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.isha??'00'}:00");
             DateTime dt2 = DateTime.now();
 
             if(fajr.compareTo(dt2) > 0){
@@ -88,12 +88,12 @@ class NextAzanComponent extends StatelessWidget {
           }
 
           String nextAzanHourRemain (){
-            DateTime fajr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.fajr??'00'}:00");
-            DateTime sunrise = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.sunrise??'00'}:00");
-            DateTime duhr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.dhuhr??'00'}:00");
-            DateTime asr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.asr??'00'}:00");
-            DateTime maghrib = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.maghrib??'00'}:00");
-            DateTime isha = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.isha??'00'}:00");
+            DateTime fajr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.fajr??'00'}:00");
+            DateTime sunrise = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.sunrise??'00'}:00");
+            DateTime duhr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.dhuhr??'00'}:00");
+            DateTime asr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.asr??'00'}:00");
+            DateTime maghrib = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.maghrib??'00'}:00");
+            DateTime isha = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.isha??'00'}:00");
             DateTime dt2 = DateTime.now();
 
             if(fajr.compareTo(dt2) > 0){
@@ -119,12 +119,12 @@ class NextAzanComponent extends StatelessWidget {
           }
 
           String nextAzanMinuteRemain (){
-            DateTime fajr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.fajr??'00'}:00");
-            DateTime sunrise = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.sunrise??'00'}:00");
-            DateTime duhr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.dhuhr??'00'}:00");
-            DateTime asr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.asr??'00'}:00");
-            DateTime maghrib = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.maghrib??'00'}:00");
-            DateTime isha = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.isha??'00'}:00");
+            DateTime fajr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.fajr??'00'}:00");
+            DateTime sunrise = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.sunrise??'00'}:00");
+            DateTime duhr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.dhuhr??'00'}:00");
+            DateTime asr = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.asr??'00'}:00");
+            DateTime maghrib = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.maghrib??'00'}:00");
+            DateTime isha = DateTime.parse("${DateFormat("yyyy-MM-dd").format(DateTime.now())} ${state.timings?.isha??'00'}:00");
             DateTime dt2 = DateTime.now();
 
             if(fajr.compareTo(dt2) > 0){
@@ -192,7 +192,7 @@ class NextAzanComponent extends StatelessWidget {
           //   return 'waiting';
           // }
 
-          DateTime fajr = DateTime.parse("${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${state.timings?.fajr??'00'}:00");
+          DateTime fajr = DateTime.parse("${DateTime.parse("${DateTime.now().year}-0${DateTime.now().month}-0${DateTime.now().day} ${state.timings?.fajr??'00'}:00")}");
 
           final dDay = DateTime.parse("$fajr");
           DateTime berlinWallFell = DateTime.now();
@@ -202,8 +202,6 @@ class NextAzanComponent extends StatelessWidget {
           int calculateHoursNowPlus12  = int.parse(TestTimer.convert24To12PrayerTimeHourOnly(DateTime.parse('1969-07-20 ${state.timings?.fajr ?? '00:00'}:04Z').hour)) - 0  ;
           int calculateHoursNowMinus12  = 12 - int.parse(TestTimer.convert24To12NowTimeHourOnly());
 
-          print("issssssssssssssssssssssssssssssssssssssssss:: $calculateHoursNowPlus12");
-          print("issssssssssssssssssssssssssssssssssssssssss:: $calculateHoursNowMinus12");
 
 
 

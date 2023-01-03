@@ -5,6 +5,7 @@ import 'package:al_zakreen/presentation/controller/temperature_bloc.dart';
 import 'package:al_zakreen/presentation/controller/temperature_event.dart';
 import 'package:al_zakreen/presentation/resources/assets_manager.dart';
 import 'package:al_zakreen/presentation/resources/color_manager.dart';
+import 'package:al_zakreen/presentation/screens/side_bar_menu/side_bar_menu.dart';
 import 'package:al_zakreen/presentation/screens/home/home_screen_components/location_and_temperature_component.dart';
 import 'package:al_zakreen/presentation/screens/home/home_screen_components/calendar_component.dart';
 import 'package:al_zakreen/presentation/screens/home/home_screen_components/name_of_allah_component.dart';
@@ -18,7 +19,10 @@ import 'home_screen_components/next_azan_component.dart';
 import 'home_screen_components/prayer_time_component.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+    const HomeScreen({super.key,/*this.category = Category.all}*/});
+
+  /*final Category category;*/
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,19 +38,14 @@ class HomeScreen extends StatelessWidget {
         ),
       ],
       child:ListView(
-        physics: const ClampingScrollPhysics(),
-        reverse: true,
         children: [
           Padding(
             padding: const EdgeInsets.all(0),
             child: Column(
               children: [
-                SizedBox(
-                  height: 20.h,
-                ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 16.h, bottom: 16.h, left: 16.w, right: 16.w),
+                      bottom: 16.h, left: 16.w, right: 16.w),
                   child: Column(
                     children: [
                       Row(

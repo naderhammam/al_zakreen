@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:al_zakreen/location_service.dart';
 import 'package:al_zakreen/presentation/resources/assets_manager.dart';
-import 'package:al_zakreen/presentation/screens/home/category.dart';
-import 'package:al_zakreen/presentation/screens/home/category_menu_page.dart';
+import 'package:al_zakreen/presentation/screens/side_bar_menu/side_bar_menu.dart';
+import 'package:al_zakreen/presentation/screens/side_bar_menu/category_menu_page.dart';
 import 'package:al_zakreen/presentation/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
@@ -18,13 +18,13 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  Category _currentCategory = Category.all;
+   NavigationDrawer? _currentNavigationDrawer ;
 
-  void _onCategoryTap(Category category) {
+  /*void _onCategoryTap(Category category) {
     setState(() {
       _currentCategory = category;
     });
-  }
+  }*/
 
   Timer? _timer;
   _startDelay() {
@@ -69,11 +69,11 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (BuildContext context) {
       return  Backdrop(
-        currentCategory: _currentCategory,
-        frontLayer: HomeScreen(),
-        backLayer: CategoryMenuPage(currentCategory: _currentCategory, onCategoryTap: _onCategoryTap,),
-        frontTitle: Text('SHRINE'),
-        backTitle: Text('MENU'),
+        currentNavigationDrawer: _currentNavigationDrawer ?? NavigationDrawer.buildMenuItems(context),
+        frontLayer: const HomeScreen(),
+        backLayer: NavigationDrawer.buildMenuItems(context),
+        frontTitle: const Text('SHRINE'),
+        backTitle: const Text('MENU'),
       );
     }));
   }
