@@ -259,6 +259,9 @@ class PrayerTimesScreen extends StatelessWidget {
                     children: [
                       Image.asset(
                         ImageManager.prayerTime1,
+                        height: 159.h,
+                        width: double.infinity,
+                        fit: BoxFit.fill,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
