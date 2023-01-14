@@ -192,7 +192,7 @@ class NextAzanComponent extends StatelessWidget {
           //   return 'waiting';
           // }
 
-          DateTime fajr = DateTime.parse("${DateTime.parse("${DateTime.now().year}-0${DateTime.now().month}-0${DateTime.now().day} ${state.timings?.fajr??'00'}:00")}");
+          DateTime fajr = DateTime.parse("${DateTime.parse("${DateTime.now().year}-0${DateTime.now().month}-${DateTime.now().day} ${state.timings?.fajr??'00'}:00")}");
 
           final dDay = DateTime.parse("$fajr");
           DateTime berlinWallFell = DateTime.now();

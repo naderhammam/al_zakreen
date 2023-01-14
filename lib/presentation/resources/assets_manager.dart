@@ -19,4 +19,11 @@ class IconManager{
   static const String temperatureIcon = '$imagePath/home_images/temperature_icon.svg';
   static const String playIcon = '$imagePath/icons/play_icon.svg';
 
+
+  static const String fajrIcon = '$imagePath/icons/fajr_icon.svg';
+  static const String sunriseIcon = '$imagePath/icons/sunrise_icon.svg';
+  static const String duhrIcon = '$imagePath/icons/duhr_icon.svg';
+  static const String asrIcon = '$imagePath/icons/asr_icon.svg';
+  static const String maghrebIcon = '$imagePath/icons/maghreb_icon.svg';
+  static const String ishaIcon = '$imagePath/icons/isha_icon.svg';
 }
